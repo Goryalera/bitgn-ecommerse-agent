@@ -1,0 +1,66 @@
+
+model:
+  default: deepseek/deepseek-v4-pro
+  provider: openrouter
+
+agent:
+  max_turns: 90
+  disabled_toolsets:
+    - web
+    - browser
+    - terminal
+    - file
+    - code_execution
+    - vision
+    - video
+    - image_gen
+    - video_gen
+    - x_search
+    - moa
+    - tts
+    - todo
+    - memory
+    - session_search
+    - clarify
+    - delegation
+    - cronjob
+    - messaging
+    - homeassistant
+    - spotify
+    - yuanbao
+    - computer_use
+
+platform_toolsets:
+  cli:
+    - bitgn-ecom
+    - skills
+
+mcp_servers:
+  bitgn-ecom:
+    enabled: true
+    command: __ECOM_MCP_PYTHON__
+    args:
+      - __ECOM_MCP_SERVER__
+    env:
+      VAULT_HARNESS_URL: "${VAULT_HARNESS_URL}"
+      VAULT_MCP_REFS: "${VAULT_MCP_REFS}"
+      VAULT_MCP_LOG: "${VAULT_MCP_LOG}"
+      VAULT_MCP_DIAG: "${VAULT_MCP_DIAG}"
+
+auxiliary:
+  vision:
+    provider: ""
+    model: ""
+  web_extract:
+    provider: ""
+    model: ""
+  compression:
+    provider: ""
+    model: ""
+
+sessions:
+  auto_prune: true
+  retention_days: 14
+
+model_catalog:
+  enabled: false

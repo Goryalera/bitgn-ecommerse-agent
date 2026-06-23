@@ -1,0 +1,21 @@
+# Зависимости Python для BitGN ECOM agent.
+# Проверено с Python 3.14.
+#
+# Важно: пакеты bitgn-api-* находятся на buf.build, а не в PyPI.
+# Устанавливайте их с дополнительным индексом:
+# pip install --extra-index-url https://buf.build/gen/python -r requirements.txt
+bitgn-api-connectrpc-python>=0.10.0
+bitgn-api-grpc-python>=1.80.0
+bitgn-api-protocolbuffers-python>=34.1.0
+
+# CLI Hermes agent.
+hermes-agent>=0.14.0
+
+# Библиотеки времени выполнения.
+connectrpc>=0.10.0
+pyqwest>=0.5.1
+httpx>=0.28.1
+mcp>=1.27.1
+pydantic>=2.12.5
+protobuf>=7.34.1
+PyYAML>=6.0.3
